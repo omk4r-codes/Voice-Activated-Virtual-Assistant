@@ -2,7 +2,8 @@ import speech_recognition as sr
 import pyttsx3
 import webbrowser
 import os
-from namesofsites import sites, songs
+import datetime
+from namesofsites import sites_or_apps, songs
 
 zira_id = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0'
 
@@ -28,9 +29,10 @@ def take():
         except Exception as e:
             return "Some error occured! Please try again."
         
-def open_web(sitename, site_url):
-    say(f"Opening {sitename}", zira_id)
-    webbrowser.open(site_url)  
+def open_web_or_apps(sitename_or_appname, site_url_or_app_address):
+    say(f"Opening {sitename_or_appname}", zira_id)
+    webbrowser.open(site_url_or_app_address)
+    os.system(f"open {site_url_or_app_address}")
         
 
 def play_song(songname, song_address):
@@ -58,14 +60,13 @@ if __name__ == '__main__':
     say(query, zira_id)
 
 
-    site_found = False  
-    for site in sites:
-        ini_command = "open site "
-        sitename = f"{site[0]}"
-        user_command = ini_command + sitename.lower()
+      
+    for site_or_app in sites_or_apps:
+        ini_command = "open "
+        sitename_or_appname = f"{site_or_app[0]}"
+        user_command = ini_command + sitename_or_appname.lower()
         if user_command.lower() in query.lower():
-            open_web(site[0], site[1])
-            site_found = True
+            open_web_or_apps(site_or_app[0], site_or_app[1])
             
 
 
@@ -78,14 +79,14 @@ if __name__ == '__main__':
         except Exception as ex:
             say(f"No folder found for playing songs!", zira_id)
         
-
-    song_found = False     
+     
     for song in songs:
         user_command = f"play song {song[0].lower()}"
         if user_command in query.lower():
                 play_song(song[0], song[1])
-                song_found = True
 
-    if (song_found == False and site_found == False):
-        say("No such thing found in saved list.", zira_id)
+
+    if "the time" in query:
+        strf_time = datetime.datetime.now().strftime("%H:%M:%S")
+        say(f"The current time is {strf_time}", zira_id)
 
