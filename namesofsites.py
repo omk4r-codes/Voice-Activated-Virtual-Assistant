@@ -8,7 +8,7 @@ sites = [
     ["Twitter", "https://www.twitter.com"],
     ["Instagram", "https://www.instagram.com"],
     ["LinkedIn", "https://www.linkedin.com"],
-    ["Amazon", "https://www.amazon.com"],
+    ["Amazon", "https://www.amazon.in"],
     ["Wikipedia", "https://www.wikipedia.org"],
     ["GitHub", "https://www.github.com"],
     ["Netflix", "https://www.netflix.com"],
