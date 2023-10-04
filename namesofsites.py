@@ -1,7 +1,7 @@
 # sites list to open:
 
 
-sites = [
+sites_or_apps = [
     ["Google", "https://www.google.com"],
     ["YouTube", "https://www.youtube.com"],
     ["Facebook", "https://www.facebook.com"],
@@ -15,6 +15,17 @@ sites = [
     ["Reddit", "https://www.reddit.com"],
     ["ChatGPT", "https://chat.openai.com"],
     ["Spotify", "https://open.spotify.com"],
+    ["Brave", "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Brave.lnk"],
+    ["Firefox", "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Firefox.lnk"],
+    ["Chrome", "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Google Chrome.lnk"],
+    ["Edge", "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Edge.lnk"],
+    ["Onedrive", "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\OneDrive.lnk"],
+    ["Powerpoint", "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\PowerPoint.lnk"],
+    ["Word", "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Word.lnk"],
+    ["Excel", "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Excel.lnk"],
+    ["Notepad", "C:\\Windows\\System32\\notepad.exe"],
+    ["Discord", "C:\\Users\\omkar\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Discord Inc\\Discord.lnk"],
+    ["File Explorer", "C:\\Windows\\explorer.exe"],
 ]
 
 songs = [
