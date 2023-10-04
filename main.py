@@ -39,28 +39,7 @@ def play_song(songname, song_address):
     say(f"Playing {songname}", zira_id)
     os.startfile(song_address)
 
-if __name__ == '__main__':
-    '''
-    to set different voice: 
-    # List available voices
-    voices = pyttsx3.init().getProperty('voices')
-    
-    # Print available voices and their IDs
-    for voice in voices:
-        print(f"Voice ID: {voice.id}, Name: {voice.name}")
-    
-    # Change the voice using the voice ID (replace 'voice_id_here' with the desired ID)
-    
-    '''
-    
-
-    say("Hello, I am Violet", zira_id)
-
-    query = take()
-    say(query, zira_id)
-
-
-      
+def start_up():
     for site_or_app in sites_or_apps:
         ini_command = "open "
         sitename_or_appname = f"{site_or_app[0]}"
@@ -90,3 +69,36 @@ if __name__ == '__main__':
         strf_time = datetime.datetime.now().strftime("%H:%M:%S")
         say(f"The current time is {strf_time}", zira_id)
 
+
+    
+
+if __name__ == '__main__':
+    '''
+    to set different voice: 
+    # List available voices
+    voices = pyttsx3.init().getProperty('voices')
+    
+    # Print available voices and their IDs
+    for voice in voices:
+        print(f"Voice ID: {voice.id}, Name: {voice.name}")
+    
+    # Change the voice using the voice ID (replace 'voice_id_here' with the desired ID)
+    
+    '''
+    
+
+    say("Hello, I am Violet", zira_id)
+
+    query = take()
+    # say(query, zira_id)
+    start_up();
+
+    say("Do you want any other help?", zira_id)
+    query = take()
+    # say(query, zira_id)
+    if query.lower() == "no":
+        say("Okay, terminating the program now", zira_id)
+    else:
+        start_up();
+    
+    
