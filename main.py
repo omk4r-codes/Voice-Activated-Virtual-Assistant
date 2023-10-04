@@ -1,3 +1,4 @@
+import speech_recognition as sr
 import pyttsx3
 
 def say(text, voice_id=None):
@@ -9,6 +10,18 @@ def say(text, voice_id=None):
     
     engine.say(text)
     engine.runAndWait()
+
+def take():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        r.pause_threshold = 1
+        audio = r.listen(source)
+        try:
+            query = r.recognize_google(audio, language="en-IN")
+            print(f"user said: {query}")
+            return query
+        except Exception as e:
+            return "Some error occured! Please try again."
 
 if __name__ == '__main__':
     '''
@@ -27,4 +40,8 @@ if __name__ == '__main__':
     zira_id = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0'
 
     print("pycharm")
-    say("Hello, I am your assistant", zira_id)
+    say("Hello, I am Violet", zira_id)
+
+    text = take()
+    say(text, zira_id)
+
