@@ -3,9 +3,11 @@ import pyttsx3
 import webbrowser
 import os
 import datetime
+import openai
 from namesofsites import sites_or_apps, songs
 
 zira_id = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0'
+openai.api_key = 'Your_api_key_here'
 
 def say(text, voice_id=None):
     engine = pyttsx3.init()
@@ -65,11 +67,29 @@ def start_up():
                 play_song(song[0], song[1])
 
 
-    if "the time" in query:
+    if "the time".lower() in query.lower():
         strf_time = datetime.datetime.now().strftime("%H:%M:%S")
         say(f"The current time is {strf_time}", zira_id)
 
+    if "using AI".lower() in query.lower():
+        try:
+            query_seperation = query.split("using AI", 1)
+            prompt = query_seperation[1].strip()
+            if prompt:
+                response = openai.Completion.create(
+                    engine = "text-davinci-002",
+                    prompt = prompt,
+                    max_tokens = 500
+                )
+                say(response, zira_id)
+            else:
+                say("Please provide a valid prompt!", zira_id)
+        except Exception as e:
+            say(f"Error resolving query. You might have ended your free tokens limit", zira_id)
 
+    if  "tell me a joke".lower() in query.lower():
+        say("What is a better joke than your life? HaHaHaHaHa", zira_id)        # :)
+        exit()
     
 
 if __name__ == '__main__':
@@ -96,8 +116,8 @@ if __name__ == '__main__':
     say("Do you want any other help?", zira_id)
     query = take()
     # say(query, zira_id)
-    if query.lower() == "no":
-        say("Okay, terminating the program now", zira_id)
+    if query.lower() == "no" or query.lower() == "naah":
+        say("Okay. For any help, I am just a click away! Good day!", zira_id)
     else:
         start_up();
     
