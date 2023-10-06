@@ -26,6 +26,7 @@ sites_or_apps = [
     ["Notepad", "C:\\Windows\\System32\\notepad.exe"],
     ["Discord", "C:\\Users\\omkar\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Discord Inc\\Discord.lnk"],
     ["File Explorer", "C:\\Windows\\explorer.exe"],
+    ["VS Code", "C:\\Users\\omkar\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code\\Visual Studio Code.lnk"],
 ]
 
 songs = [
