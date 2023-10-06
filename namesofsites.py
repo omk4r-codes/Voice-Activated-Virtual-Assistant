@@ -29,7 +29,7 @@ sites_or_apps = [
     ["VS Code", "C:\\Users\\omkar\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code\\Visual Studio Code.lnk"],
 ]
 
-songs = [
+songs_or_videos = [
     ["On and On", "C:\\Users\\omkar\\OneDrive\\Desktop\\NCS_Songs\\Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3"],
     ["Royalty", "C:\\Users\\omkar\\OneDrive\\Desktop\\NCS_Songs\\Egzod, Maestro Chives, Neoni - Royalty [NCS Release].mp3"],
     ["Heroes Tonight", "C:\\Users\\omkar\\OneDrive\\Desktop\\NCS_Songs\\Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3"],
