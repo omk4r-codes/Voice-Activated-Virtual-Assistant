@@ -4,7 +4,7 @@ import webbrowser
 import os
 import datetime
 import openai
-from namesofsites import sites_or_apps, songs
+from namesofsites import sites_or_apps, songs_or_videos
 
 zira_id = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0'
 openai.api_key = 'Your_api_key_here'
@@ -37,7 +37,7 @@ def open_web_or_apps(sitename_or_appname, site_url_or_app_address):
     os.system(f"open {site_url_or_app_address}")
         
 
-def play_song(songname, song_address):
+def play_song_or_video(songname, song_address):
     say(f"Playing {songname}", zira_id)
     os.startfile(song_address)
 
@@ -51,20 +51,20 @@ def start_up():
             
 
 
-    user_command = "play songs".lower()
+    user_command = "play songs_or_videos".lower()
     if user_command in query.lower():
         filepath = "C:\\Users\\omkar\\OneDrive\\Desktop\\NCS_Songs"
         try:
-            say("Opening songs folder that I found", zira_id)
+            say("Opening songs_or_videos folder that I found", zira_id)
             os.startfile(filepath)
         except Exception as ex:
-            say(f"No folder found for playing songs!", zira_id)
+            say(f"No folder found for playing songs_or_videos!", zira_id)
         
      
-    for song in songs:
-        user_command = f"play song {song[0].lower()}"
+    for song_or_video in songs_or_videos:
+        user_command = f"play {song_or_video[0].lower()}"
         if user_command in query.lower():
-                play_song(song[0], song[1])
+                play_song_or_video(song_or_video[0], song_or_video[1])
 
 
     if "the time".lower() in query.lower():
